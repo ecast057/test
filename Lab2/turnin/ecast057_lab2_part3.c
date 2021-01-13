@@ -15,7 +15,7 @@
 int main(void) {
     /* Insert DDR and PORT initializations */
 	DDRA = 0x00; PORTA = 0xFF;
-	DDRB = 0xFF; PORTC = 0x00;
+	DDRC = 0xFF; PORTC = 0x00;
 
 	unsigned char tmpA = 0x00;
 	unsigned char cntavail = 0x00;
@@ -24,7 +24,7 @@ int main(void) {
 	while (1) {
 		tmpA = PINA;
 		
-		if (tmpA == 0x00 ){
+		if (tmpA == 0x00 || tmpA == 0x80){
 			cntavail = 0x04;
 		}
 
